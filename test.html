@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Task</title>
+
+	<style> 
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+
+</style>
+
+</head>
+
+<body>
+	<input type="text" class="input-in" size="80">
+	<button>Enter</button>
+	<div class="out"></div>
+
+	
+	<script>
+let inputIn = document.querySelector('.input-in');
+let button = document.querySelector('button');
+let div = document.querySelector('.out'); // показывает результат ввода
+
+button.onclick = function(){
+div.innerHTML ="your result: " + inputIn.value;
+inputIn.value = "";
+}
+
+
+
+
+	</script>
+
+</body>
+
+</html>	
