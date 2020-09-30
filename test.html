@@ -3,46 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Task</title>
-  <style> 
+  <style>
     input[type=text]:focus {
       background-color: lightblue;
     }
     .green {
-	color: #00cc33;
-	}
+      color: #00cc33;
+    }
     .red {
-       color: red;
-       }
-  </style>
-</head>
+      color: red;
+    }
 
+  </style>
+  </head>
 <body>
   <input type="text" class="input-in" size="80">
   <button>Enter</button>
   <div class="out"></div>
-	
+
   <script>
-  let inputIn = document.querySelector('.input-in');
-  let button = document.querySelector('button');
-  let div = document.querySelector('.out'); 
-  const regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-  
-  inputIn.addEventListener('keyup', function (event) {
-	div.className = ''
-	div.classList.add(regex.test(event.target.value) ? 'red' : 'green');
-	checkIfValid(event.target.value);
-  });
-  function checkIfValid (value) {
-	if (value.length > 3) {
-	div.innerHTML = value
-	} else {
-	div.innerHTML = ''
-	}
-  }
-  button.onclick = function(){
-  div.innerHTML ="your result: " + inputIn.value;
-  inputIn.value = "";
-  }
-</script> 
+    let inputIn = document.querySelector('.input-in');
+    let button = document.querySelector('button');
+    let div = document.querySelector('.out');
+    const regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    button.onclick = function() {
+      if (inputIn.value.length > 3) {
+      div.className = ''
+      div.classList.add(regex.test(inputIn.value) ? 'red' : 'green');
+      div.innerHTML = "your result: " + inputIn.value;
+      inputIn.value = "";
+      }
+    }
+
+  </script>
 </body>
+
 </html>	
